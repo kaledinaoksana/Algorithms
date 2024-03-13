@@ -24,3 +24,29 @@ def return_input_output(module, problem, tests, num_of_test):
     input, output = paths[num_of_test-1]
     create_files_with_dirs(paths)
     return input, output
+
+
+# read file
+def read_int_arr_line(file):
+    return int(file.readline().strip())
+
+def read_list_of_tuple(file, len_tupels):
+    result_list = []
+    for _ in range(len_tupels):
+        x, y = file.readline().strip().split()
+        result_list.append((float(x),float(y)))
+    return result_list
+
+# scan input 
+def scan_file_input(input, func):
+    file = open(input, 'r')
+    parameters = func()
+    file.close()
+    return parameters
+
+# scan output 
+def scan_file_output(output, func):
+    file = open(output, 'r')
+    parameters = func()
+    file.close()
+    return parameters
