@@ -1,0 +1,6 @@
+// use toml .vscode
+{
+    "files.associations": {
+        "*.toml": "toml"
+    }
+}
