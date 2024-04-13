@@ -1,0 +1,107 @@
+[project]
+
+# BASIC INFORMATION
+name = "mlops-ods"
+version = "1.0.0"
+
+### DEPENDENCIES AND REQUIREMENTS
+requires-python = ">=3.8"
+
+# ABOUT YOUR PROJECT
+authors = [{name = "Oksana Kaledina", email = "kaledinaoa@gmail.com"}]
+maintainers = [{name = "Oksana Kaledina", email = "kaledinaoa@gmail.com"}]
+description = "educational project"
+readme = "README.md"
+license = {text = "Oxana License"}
+
+# URLS
+[project.urls]
+Homepage = "https://gitlab.com/kaledinaoksana/mlops_ods"
+Documentation = "https://gitlab.com/kaledinaoksana/mlops_ods"
+Repository = "https://gitlab.com/kaledinaoksana/mlops_ods"
+Issues = "https://gitlab.com/kaledinaoksana/mlops_ods"
+
+[build-system]
+requires = [
+    # NOTE: this needs to be kept in sync with mypy-requirements.txt
+    # and build-requirements.txt, because those are both needed for
+    # self-typechecking :/
+    "setuptools >= 40.6.2",
+    "wheel >= 0.30.0",
+    # the following is from mypy-requirements.txt
+    "typing_extensions>=4.1.0",
+    "mypy_extensions>=1.0.0",
+    "tomli>=1.1.0; python_version<'3.11'",
+    # the following is from build-requirements.txt
+    "types-psutil",
+    "types-setuptools",
+]
+build-backend = "setuptools.build_meta"
+
+# RUFF
+[tool.ruff]
+target-version = "py312" # ["py37" | "py38" | "py39" | "py310" | "py311" | "py312"]
+builtins = ["_"]
+exclude = [".venv"]
+fix = true
+force-exclude = true
+include = ["*.py", "*.ipynb"]
+line-length = 88
+indent-width = 4
+preview = true
+required-version = ">=0.0.193"
+# show-fixes = true
+# show-source = true
+src = ["src", "tests", "docs"]
+
+
+# RUFF FORMATTERS
+[tool.ruff.format]
+docstring-code-format = true
+quote-style = "double" # "double" | "single" | "preserve"
+indent-style = "space"
+line-ending = "auto" # "auto" | "lf" | "cr-lf" | "native"
+skip-magic-trailing-comma = false
+preview = true
+docstring-code-line-length = "dynamic"
+
+
+# RUFF LINTERS
+[tool.ruff.lint]
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+select = ["E", "F", "W"]
+
+explicit-preview-rules = true
+extend-select = [
+   "C90",    # mccabe
+   "I",      # isort
+   "N",      # pep8-naming
+   "D",      # pydocstyle
+   "UP",     # pyupgrade
+   "ANN",    # flake8-annotations
+   "ASYNC",  # flake8-async
+   "S",      # flake8-bandit
+   "BLE",    # flake8-blind-except
+   "B",      # flake8-bugbear
+   "C4",     # flake8-comprehensions
+   "DTZ",    # flake8-datetimez
+   "EM",     # flake8-error-messages
+   "FA",     # flake8-future-annotations
+   "ISC",    # flake8-implicit-string-concat
+   "PIE",    # flake8-pie
+   "PT",     # flake8-pytest-style
+   "SLF",    # flake8-self
+   "SIM",    # flake8-simplify
+   "ARG",    # flake8-unused-argument
+   "ERA",    # eradicate commented out code
+   "PD",     # pandas-vet
+   "TRY",    # tryceratops
+   "NPY",    # NumPy-specific rules
+]
+extend-safe-fixes = ["ALL"]
+fixable = ["ALL"]
+unfixable = []
+
+# MACABE - "C90"
+[tool.ruff.lint.mccabe]
+max-complexity = 5
