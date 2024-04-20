@@ -1,0 +1,12 @@
+# Содержимое файла output.json:
+{
+    "1": [
+        "starboard",
+        "sloop"
+    ],
+    "2": [
+        "cockpit top",
+        "anchor"
+    ],
+    "3": []
+}

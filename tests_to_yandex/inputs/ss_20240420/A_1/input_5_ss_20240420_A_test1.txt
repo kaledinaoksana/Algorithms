@@ -1,0 +1,13 @@
+# Содержимое stdin:
+sample_1.json
+deck_mast_port side
+windlass_hold_hole
+deckhouse_stern_crossbar sail
+foresail
+# Содержимое файла sample_1.json:
+{
+ "1": "10",
+ "2": "20",
+ "3": "30",
+ "4": "20"
+}

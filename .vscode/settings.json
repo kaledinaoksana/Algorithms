@@ -2,5 +2,8 @@
 {
     "files.associations": {
         "*.toml": "toml"
-    }
+    },
+    "python.analysis.extraPaths": [
+        "./lections"
+    ]
 }

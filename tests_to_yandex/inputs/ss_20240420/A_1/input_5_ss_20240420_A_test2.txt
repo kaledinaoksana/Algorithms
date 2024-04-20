@@ -1,0 +1,11 @@
+# Содержимое stdin:
+sample_2.json
+starboard_sloop
+keel_anchor_deck_cockpit top
+mast
+# Содержимое файла sample_2.json:
+{
+ "1": "30",
+ "2": "10",
+ "3": "10"
+}
